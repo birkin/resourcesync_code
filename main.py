@@ -14,11 +14,13 @@ def test_features():
   cl.read(capability_url)
   for resource in cl:
       print(f"supports {resource.capability} (at {resource.uri})")
+  # Read Resource List and print it
   rl = ResourceList()
   resource_url = 'http://localhost:8888/resourcelist.xml'
   rl.read(resource_url)
   for resource in rl:
     print(resource)
+  # Attempting to download resources, but this just writes out resource list to file
   dump = ResourceDump(resources=rl)
   dump.write(basename='./dump_test/test.xml')
 
