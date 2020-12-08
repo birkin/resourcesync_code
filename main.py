@@ -22,7 +22,7 @@ def test_features():
 
   for resource in rl:
     print(resource)
-  # Attempting to download resources, but this just writes out resource list to file
+  # Attempting to download resources, but getting an error related to one resource
   d = dump.Dump(resources=rl)
   d.write(basename='./dump_test/test.xml')
 
