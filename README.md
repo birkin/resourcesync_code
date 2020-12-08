@@ -35,3 +35,6 @@ So, via trial and error and the instructions at <https://github.com/resync/resyn
     - (aside: normal ways of exiting this terminal-session don't work -- i ended up closing the tab which halts the process)
 
 ---
+
+
+Hello Birkin!
