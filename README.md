@@ -11,6 +11,10 @@
     - <https://hyku.samvera.org/2017/06/22/resourcesync.html>
         - note, the <https://github.com/dpla/ingestion3> code referenced gives a github 404 when the resourcesync link is clicked.
 
+- auth pattern
+    - get-token: <https://github.com/Brown-University-Library/sierra_big_export_code/blob/master/lib/sierra.py#L29-L44>
+    - use-token: <https://github.com/Brown-University-Library/sierra_big_export_code/blob/master/lib/sierra.py#L70-L72>
+
 
 ---
 
