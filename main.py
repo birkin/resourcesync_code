@@ -12,12 +12,14 @@ def test_features():
   cl = CapabilityList()
   capability_url = 'http://localhost:8888/capabilitylist.xml'
   cl.read(capability_url)
+  print( "\nAbout to show all capabilities..." )
   for resource in cl:
       print(f"supports {resource.capability} (at {resource.uri})")
   # Read Resource List and print it
   rl = ResourceList()
-  resource_url = 'http://localhost:8888/resourcelist.xml'
+  resource_url = 'http://localhost:8888/resourcelist.xml'  # this url is one of the capabilities
   rl.read(resource_url)
+
   for resource in rl:
     print(resource)
   # Attempting to download resources, but this just writes out resource list to file
