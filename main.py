@@ -20,13 +20,22 @@ def test_features():
   resource_url = 'http://localhost:8888/resourcelist.xml'  # this url is one of the capabilities
   rl.read(resource_url)
 
-  for resource in rl:
-    print(resource)
+  # for resource in rl:
+  #   print(resource)
+
   # Attempting to download resources, but getting an error related to one resource
-  d = dump.Dump(resources=rl)
-  d.write(basename='./dump_test/test.xml')
+  #
+  # So going to try creating a smaller subset of the Resource List and get only that to see if it works
+  sub_rl = ResourceList()
+  for i, r in enumerate(rl):
+    sub_rl.add(r)
+    if i > 3:
+      break
+  print('Sub list:')
+  for r in sub_rl:
+    print(r)
+  d = dump.Dump(resources=sub_rl)
+  d.write(basename='/dump_test/sub_test_')
 
 if __name__ == '__main__':
     test_features()
-
-    # test edit
