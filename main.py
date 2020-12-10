@@ -23,9 +23,19 @@ def test_features():
 
   for resource in rl:
     print(resource)
-  # Attempting to download resources, but getting an error related to one resource
-  # d = dump.Dump(resources=rl)
-  # d.write(basename='./dump_test/test.xml')
+  uris = [r.uri for r in rl]
+  print('---------------------------')
+  print(uris[4])
+  print('---------------------------')
+
+  chosen_r = [k for k in rl.resources.keys()][4]
+  print(chosen_r)
+  rl_for_dump = ResourceList()
+  rl_for_dump.add(rl.resources[chosen_r])
+  for r in rl_for_dump:
+    print(r)
+  d = dump.Dump(resources=rl_for_dump)
+  d.write(basename='/dump_test/dart_test_')
 
 if __name__ == '__main__':
     test_features()
