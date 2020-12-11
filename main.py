@@ -23,17 +23,24 @@ def test_features():
 
   for resource in rl:
     print(resource)
+
+  # Test getting uris  
   uris = [r.uri for r in rl]
   print('---------------------------')
   print(uris[4])
   print('---------------------------')
 
-  chosen_r = [k for k in rl.resources.keys()][4]
+  # Test getting a single resource...this doesn't seem like it should be the best way to do it, but I couldn't find a built-in way
+  chosen_r = [k for k in rl.resources.keys()][4] # Chose #4, Dartmouth because it's the smallest non-zero option at present...
   print(chosen_r)
+
+  # Build a ResourceList with a single orgs resource
   rl_for_dump = ResourceList()
   rl_for_dump.add(rl.resources[chosen_r])
   for r in rl_for_dump:
     print(r)
+
+  # Try to get a dump of resources...currently getting an error due to "No file path defined"
   d = dump.Dump(resources=rl_for_dump)
   d.write(basename='/dump_test/dart_test_')
 
